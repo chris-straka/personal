@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
-	// Type-check frontmatter using a schema
+	// This schema gives me TS type checking for my frontmatter
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),

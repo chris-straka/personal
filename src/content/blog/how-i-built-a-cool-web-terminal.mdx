@@ -1,0 +1,27 @@
+---
+title: "How I built a cool web terminal"
+description: "This blog post is about how I built a simple yet convincing terminal emulator on my website. No Canvas API required."
+pubDate: "Feb 08 2023"
+---
+
+I used a cool trick to make the web terminal for this website and I think it's worth sharing. If you want to find out more about how I made the terminal in its entirety, you can check out the source code for my terminal on Github.
+
+There's only two HTML elements that are meant to take in text from the user, the input element and the textarea element.
+
+<textarea>I started off with the textarea element, because it wraps text from the user onto the next line and this is usually what happens in most terminals. However, I ended abandoning the textarea element because it's difficult to put text inside of it that the user can't delete. The reason why I would need to do this, is because I want the user's text to wrap around the terminal prompt like it does in most terminals. So without using an input element or a textarea element, how did I grab any text from the user? Feel free to pause here and take a guess. </textarea>
+
+- I can put text the user can't delete in an <input> but not a <textarea>
+- <textarea> makes the most sense for a terminal but the prompt makes the text wrap poorly
+
+I solved both these issues by avoiding <input> and <textarea> and using a global HTML attribute called `contenteditable` instead. I think it has poor a11y if not done properly, and it might introduce other hickups that I haven't ran into yet, but it does exactly what I want it to do
+
+I managed to pull it off with this one nifty attribute called contenteditable. It's a global attribute available to every element, and it lets you write text inside it. I'm pretty sure it's for making your own WYSIWYG text editor in the browser, but I'd have to look into it more to find out. Thankfully, it lets the user write and wrap text just the way I want. Here's a code snippet of what it looks like on this website.
+
+<span
+  id="terminal__cli"
+  contentEditable="true"
+  suppressContentEditableWarning={true}
+  spellCheck={false}
+/>
+
+Let me know if you have anything cool to show off that uses this same attribute at skylake112@outlook.com

@@ -1,0 +1,56 @@
+@keyframes blinkingCursor {
+  from,
+  to {
+    border-color: white;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+}
+
+#terminal {
+  font-family: monospace;
+  border: 2px solid brown;
+  background-color: hsl(0, 0%, 5%);
+  color: hsl(0, 0%, 80%);
+  height: 400px;
+  width: 500px;
+  cursor: default;
+  opacity: 0.8;
+  box-shadow: 2px 6px 10px 9px rgba(0, 0, 0, 0.3);
+  padding: 6px;
+}
+
+#terminal__body {
+  overflow-y: auto;
+  height: 100%;
+
+  /* hides the scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#terminal__body::-webkit-scrollbar {
+  display: none;
+}
+
+#terminal__output {
+  list-style: none;
+}
+
+#terminal__cli {
+  resize: none;
+  width: 100%;
+  caret-color: transparent;
+  outline: none;
+  border-right: 8px solid transparent;
+}
+
+#terminal__cli:focus {
+  animation: 1.2s blinkingCursor step-end infinite;
+}
+
+.typing {
+  border-color: white !important;
+}
