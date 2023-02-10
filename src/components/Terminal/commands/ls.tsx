@@ -2,11 +2,11 @@ import type { CollectionEntry } from "astro:content"
 
 export function ls(posts: CollectionEntry<'blog'>[]) {
   return (
-    <ul>
+    <ul style={{ listStyleType: 'none', padding: '0', lineHeight: '1.6' }}>
       {
         posts.map((post) => (
-          <li style={{ display: 'inline-block', marginRight: '10px' }} key={post.slug}>
-            <a style={{ color: 'aquamarine' }} href={post.slug}>{post.data.title}</a>
+          <li key={post.slug}>
+            <a href={post.slug} style={{ color: 'aquamarine' }}>{post.data.title}</a>
           </li>
         ))
       }
@@ -15,19 +15,16 @@ export function ls(posts: CollectionEntry<'blog'>[]) {
 }
 
 export function lsl(posts: CollectionEntry<'blog'>[]) {
+  console.log(posts)
   return (
-    <ul>
+    <ul style={{ listStyleType: 'none', padding: '0' }}>
       {
         posts.map((post) => (
-          <li key={post.slug}>-rw-r--r-- chris {post.data.pubDate} <a href={post.slug}>{post.data.title}</a></li>
+          <li key={post.slug}>
+            -rw-r--r-- chris {post.data.pubDate.toDateString()} <a href={post.slug} style={{ color: 'aquamarine' }}>{post.data.title}</a>
+          </li>
         ))
       }
-
-      <style jsx>{`
-          a {
-            color: aquamarine;
-          }
-        `}</style>
     </ul>
   )
 }

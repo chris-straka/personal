@@ -1,14 +1,18 @@
 ---
 import { getCollection, CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
 import Terminal from "../components/Terminal/Terminal";
+import KeyboardCat from "../components/KeyboardCat";
+import Projects from "../components/Projects.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 interface Props {
   post: CollectionEntry<"blog">;
 }
 
-const posts = (await getCollection("blog")).sort(
+let posts = await getCollection("blog");
+posts = posts.sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
@@ -17,11 +21,81 @@ const posts = (await getCollection("blog")).sort(
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      main {
+        display: grid;
+        grid-template-areas:
+          "header"
+          "terminal";
+        height: 100%;
+        margin-inline: 1em;
+        grid-template-rows: repeat(2, minmax(min-content, max-content));
+      }
+
+      .header {
+        grid-area: header;
+      }
+
+      .terminal {
+        grid-area: terminal;
+        display: none;
+      }
+
+      .cat {
+        grid-area: cat;
+        display: none;
+      }
+
+      @media (min-width: 961px) {
+        main {
+          display: grid;
+          grid-template-areas:
+            "header terminal"
+            "cat terminal";
+          align-content: center;
+          align-items: center;
+          width: 1200px;
+          height: 90%;
+          margin-inline: auto;
+        }
+        .header {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .cat {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .terminal {
+          display: block;
+          width: 600px;
+          height: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .projects {
+          display: none;
+        }
+      }
+
+      @media (min-width: 1400px) {
+        main {
+          width: 1300px;
+        }
+        .terminal {
+          width: 700px;
+          height: 700px;
+        }
+      }
+    </style>
   </head>
   <body>
     <main>
-      <Terminal posts={posts} switchPaw={}/>
-      <a href="/blog">Blogs</a>
+      <Header className="header" posts={posts} />
+      <Terminal className="terminal" posts={posts} client:visible />
+      <KeyboardCat className="cat" client:visible />
+      <Projects className="projects" />
     </main>
   </body>
 </html>

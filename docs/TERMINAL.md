@@ -1,5 +1,7 @@
 # Ideas
 
+## Add user last login to the terminal via localStorage.get('lastLogin')
+
 ## Battery Status in the terminal
 
 https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API
@@ -10,7 +12,6 @@ Thought about incorporating this webapi with my terminal but I want to try on so
 
 https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API/Introduction
 
-## Add user last login to the terminal via localStorage.get('lastLogin')
 
 ## Add mouse to keyboard cat and track the user's mouse
 

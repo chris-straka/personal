@@ -1,24 +1,56 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE, GITHUB_LINK, RESUME_LINK } from "../consts";
+import type { CollectionEntry } from "astro:content";
+import Post from "./Post.astro";
+import { GithubSvg } from "./svg";
+import { GITHUB_LINK, RESUME_LINK } from "../consts";
+
+interface Props {
+  posts: CollectionEntry<"blog">[];
+  className: string;
+}
+
+const { posts, className } = Astro.props;
 ---
 
-<header>
-  <h2>
-    {SITE_TITLE}
-  </h2>
+<header class={className}>
+  <h1>
+    Hi, I&apos;m Chris Straka
+    <GithubSvg />
+  </h1>
   <nav>
-    <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/blog">Blogs</HeaderLink>
-    <HeaderLink href="/resume">resume</HeaderLink>
-    <HeaderLink href={GITHUB_LINK} target="_blank">GitHub</HeaderLink>
+    <a href="/">Home</a>
+    <a href="/blog">Blog</a>
+    <a href={RESUME_LINK} target="_blank">Resume</a>
+    <a href={GITHUB_LINK} target="_blank">GitHub</a>
   </nav>
+  <h2>Recent Posts</h2>
+  <ul>
+    <Post post={posts[0]} />
+    <Post post={posts[1]} />
+    <Post post={posts[2]} />
+  </ul>
 </header>
+
 <style>
   header {
-    margin: 0em 0 2em;
+    margin: 0 0 0 0;
   }
   h2 {
     margin: 0.5em 0;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  nav {
+    margin-bottom: 2em;
+  }
+  nav a {
+    margin-right: 10px;
+  }
+  @media (min-width: 960px) {
+    header {
+      margin: 0 0 2em 0;
+    }
   }
 </style>

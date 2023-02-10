@@ -6,7 +6,7 @@ pubDate: "Feb 08 2023"
 
 > As a heads up, this may not be a great introduction to the topic of variance. &nbsp; &nbsp; I also rewrite this post quite a bit, and might do so again in the future.
 
-If you ever looked at Kotlin generics, you may have struggled (as I have) to understand type variance on an intuitive level. You may already know that a "producer" can only produce its generic type, and a "consumer" can only consume its generic type. But the question I want to answer here in this post is, why?
+If you ever looked at Kotlin generics, you may have struggled (as I have) to understand type variance on an intuitive level. You may already know that a "producer" can only produce its generic type, and a "consumer" can only consume its generic type. But the question I want to answer here is, why?
 
 I've written out a small code example down below that will hopefully illustrate why this must be the case.
 
@@ -18,7 +18,7 @@ var a: MutableList<Int> = mutableListOf(1, 2, 3)
 val b: MutableList<in Int> = a
 ```
 
-As the programmer, we can clearly see that b is holding a list of integers. So why are we not allowed to grab any integers from b when it's so painfully obvious to us that it's holding a list of integers? We even marked it as val, which means b will NEVER point to anything else (i.e. a list of floats or something).
+As the programmer, we can clearly see that b is holding a list of integers. So why are we not allowed to grab any integers from b when it's so painfully obvious to us that it's holding a list of integers? We even marked it as val, which means b will **never** point to anything else (i.e. a list of floats or something).
 
 ```kotlin
 val c: Int = b[0] // ERROR, b[0] is of type Any? and NOT an Int

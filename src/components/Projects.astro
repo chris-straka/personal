@@ -1,0 +1,29 @@
+---
+interface Props {
+  className: string;
+}
+
+const { className } = Astro.props;
+---
+
+<section class={className}>
+  <h2>Recent Projects</h2>
+  <a href="https://pethreon.cstraka.dev" target="_blank">
+    <img
+      sizes="(max-width: 4064px) 100vw, 4064px"
+      srcset="
+      Pethreon_be1ywg_c_scale,w_190.webp 190w,
+      Pethreon_be1ywg_c_scale,w_733.webp 733w,
+      Pethreon_be1ywg_c_scale,w_1119.webp 1119w,
+      Pethreon_be1ywg_c_scale,w_1418.webp 1418w,
+      Pethreon_be1ywg_c_scale,w_1666.webp 1666w,
+      Pethreon_be1ywg_c_scale,w_1856.webp 1856w,
+      Pethreon_be1ywg_c_scale,w_2098.webp 2098w,
+      Pethreon_be1ywg_c_scale,w_2252.webp 2252w,
+      Pethreon_be1ywg_c_scale,w_2241.webp 2241w,
+      Pethreon_be1ywg_c_scale,w_4064.webp 4064w"
+      src="Pethreon_be1ywg_c_scale,w_4064.webp"
+      alt="A picture of the pethreon website"
+    />
+  </a>
+</section>

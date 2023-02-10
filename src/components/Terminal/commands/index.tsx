@@ -17,21 +17,18 @@ function clearTerminal(setTerminalOutput: StateUpdater<JSX.Element[]>) {
 }
 
 const help = () => (
-  <>
-    <p style={{ marginTop: '16px' }}>
-      You can use this terminal to read and find posts on this site.
-      You don't have to use this terminal if you don't want to, it's merely for novelty purposes.
-      All links that show up in the terminal are clickable (try using the <code>ls</code> command).
-      Keyboard shortcuts are not supported.
-      All available commands are listed below.
-      Options/flags are not supported unless otherwise indicated.
-    </p>
-    <p style={{ marginTop: '16px', marginBottom: '16px' }}>
-      cat, clear, echo, grep, head,
-      help, hostname, locate, ls (-l), uname,
-      uname, vim/emacs, whoami
-    </p>
-  </>
+  <p style={{ marginTop: '16px', marginBottom: '16px' }}>
+    You can use this terminal to read and find posts on this site.
+
+    It's merely for novelty purposes. Keyboard shortcuts are not supported.
+
+    All available commands are listed below.
+
+    <br />
+    <br />
+
+    cat, clear, echo, grep, head, help, hostname, locate, ls (-l), uname, whoami
+  </p>
 )
 
 export {

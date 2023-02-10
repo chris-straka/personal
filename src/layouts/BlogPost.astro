@@ -15,9 +15,85 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         font-size: 2em;
         margin: 0.25em 0 0;
       }
+
       hr {
         border-top: 1px solid #ddd;
         margin: 1rem 0;
+      }
+
+      body {
+        font-family: Verdana, sans-serif;
+        margin: auto;
+        padding: 20px;
+        max-width: 65ch;
+        text-align: left;
+        background-color: #fff;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.5;
+        color: #444;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      strong,
+      b {
+        color: #222;
+      }
+
+      a {
+        color: #3273dc;
+      }
+
+      nav a {
+        margin-right: 10px;
+      }
+
+      textarea {
+        width: 100%;
+        font-size: 16px;
+      }
+
+      input {
+        font-size: 16px;
+      }
+
+      content {
+        line-height: 1.6;
+      }
+
+      table {
+        width: 100%;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      code {
+        padding: 2px 5px;
+        background-color: #f2f2f2;
+      }
+
+      pre {
+        padding: 1rem;
+      }
+
+      pre > code {
+        all: unset;
+      }
+
+      blockquote {
+        border: 1px solid #999;
+        color: #222;
+        padding: 2px 0px 2px 20px;
+        margin: 0px;
+        font-style: italic;
       }
     </style>
   </head>
@@ -28,7 +104,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
         <h1 class="title">{title}</h1>
         <a href="/">Home</a>
-        <a href="/blog">Blogs</a>
+        <a href="/blog">Blog</a>
         {pubDate && <time>{pubDate}</time>}
         {
           updatedDate && (

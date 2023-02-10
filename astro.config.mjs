@@ -8,5 +8,8 @@ import preact from "@astrojs/preact";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [mdx(), sitemap(), preact()]
+  integrations: [mdx(), sitemap(), preact()],
+  markdown: {
+    smartypants: false
+  }
 });

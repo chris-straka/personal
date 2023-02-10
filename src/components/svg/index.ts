@@ -1,9 +1,9 @@
-import { CatLeftUpSvg } from "./CatLeftUp";
-import { CatRightUpSvg } from "./CatRightUp";
+import { CatLeft } from "./CatLeft";
+import { CatRight } from "./CatRight";
 import { GithubSvg } from "./GithubSvg";
 
 export {
-  CatLeftUpSvg,
-  CatRightUpSvg,
+  CatLeft,
+  CatRight,
   GithubSvg
 }

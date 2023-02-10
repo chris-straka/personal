@@ -1,0 +1,72 @@
+.terminal {
+  cursor: default;
+  font-family: monospace;
+  background-color: hsl(0, 0%, 5%);
+  color: hsl(0, 0%, 80%);
+  opacity: 0.8;
+  padding: 9px;
+  list-style: none;
+
+  // fancy border
+  border-style: solid;
+  border-width: 2px;
+  border-image: linear-gradient(to right bottom, hsl(347deg 33% 52%), #a053df);
+  border-image-slice: 1;
+
+  // fancy box shadow
+  box-shadow: 2px 6px 10px 9px rgba(0, 0, 0, 0.3);
+
+  &__body {
+    overflow-y: auto;
+    height: 100%;
+
+    /* hides the scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__output {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__cli {
+    resize: none;
+    width: 100%;
+    caret-color: transparent;
+    outline: none;
+    border-right: 8px solid transparent;
+
+    &:focus {
+      animation: 1.2s blinkingCursor step-end infinite;
+    }
+  }
+}
+
+@keyframes blinkingCursor {
+  from,
+  to {
+    border-color: white;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+}
+
+.typing {
+  border-color: white !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .terminal {
+    background-color: hsl(0deg 0% 10%);
+    // border-color: hsl(347deg 33% 52%);
+    box-shadow: none;
+  }
+}
