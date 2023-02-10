@@ -16,7 +16,7 @@ in text that the user couldn't delete (the terminal prompt)
 <input
   type="text"
   readonly
-  value="It's easy to add text that the user can't delete inside an input element like this one, but the text doesn't wrap onto the next line"
+  value="It's easy to add text that the user can't delete inside an input element like this one, but it doesn't wrap onto the next line"
   style="width: 100%;"
 />
 
@@ -30,7 +30,7 @@ in text that the user couldn't delete (the terminal prompt)
 To get around both these limitations, I found a [global HTML attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes)
 called [contenteditable](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable).
 You have to be weary of accessibility when you use it, and I think it's mostly used for creating your own
-[WYSIWYG editor](https://en.wikipedia.org/wiki/WYSIWYG). But it works wonders for creating your own terminal, like below.
+[WYSIWYG editor](https://en.wikipedia.org/wiki/WYSIWYG). But it works wonders for creating your own terminal.
 
 ```html
 <div>[visitor@mywebsite ~] <span contenteditable></span></div>

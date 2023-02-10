@@ -4,9 +4,9 @@ description: "This blog post helps people make sense of variance on an intutitiv
 pubDate: "Feb 08 2023"
 ---
 
-> As a heads up, this may not be a great introduction to the topic of variance. &nbsp; &nbsp; I also rewrite this post quite a bit, and might do so again in the future.
+As a heads up, this may not be a great introduction to the topic of variance. If you're stumped this might help you.
 
-If you ever looked at Kotlin generics, you may have struggled (as I have) to understand type variance on an intuitive level. You may already know that a "producer" can only produce its generic type, and a "consumer" can only consume its generic type. But the question I want to answer here is, why?
+If you ever looked at Kotlin generics, you may have struggled (as I have) to understand type variance on an intuitive level. You may already know that a "producer" can **only** produce its generic type, and a "consumer" can **only** consume its generic type. But the question I want to answer here is, why?
 
 I've written out a small code example down below that will hopefully illustrate why this must be the case.
 

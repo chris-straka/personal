@@ -1,8 +1,6 @@
 # Personal Blog Website
 
-This blog has recently been rewritten from [NextJS](https://nextjs.org) to [Astro](https://astro.build).
-
-Git commit for the nextjs version of this app 1c231564a124f97d3b15c4c45bf1362df31ba7bd
+Personal blog with my projects and blog posts.
 
 ## Attribution
 
@@ -12,5 +10,6 @@ Git commit for the nextjs version of this app 1c231564a124f97d3b15c4c45bf1362df3
 
 ## License
 
-The code is MIT
-The content (my posts) is CC BY-NC-SA 4.0
+Code is MIT
+
+Content (my posts) is CC BY-NC-SA 4.0

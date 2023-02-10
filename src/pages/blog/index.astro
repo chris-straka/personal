@@ -14,30 +14,31 @@ const posts = (await getCollection("blog")).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
+      main {
+        margin-inline: 1em;
+      }
       ul {
         list-style-type: none;
         padding: unset;
+        font-size: larger;
       }
       ul li {
-        display: flex;
         margin-block: 1em;
       }
-      ul li time {
-        flex: 0 0 130px;
-        font-style: italic;
+      time {
+        display: block;
         color: #595959;
+        font-style: italic;
       }
       ul li a:visited {
         color: #8e32dc;
-      }
-      .projects {
-        display: block;
       }
 
       @media (min-width: 961px) {
         main {
           display: grid;
           grid-auto-flow: column;
+          grid-template-columns: 1fr 1fr;
           margin-inline: auto;
           height: 100%;
           width: 1200px;
@@ -53,6 +54,7 @@ const posts = (await getCollection("blog")).sort(
           {
             posts.map((post) => (
               <li>
+                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
                 <time datetime={post.data.pubDate.toISOString()}>
                   {post.data.pubDate.toLocaleDateString("en-us", {
                     year: "numeric",
@@ -60,7 +62,6 @@ const posts = (await getCollection("blog")).sort(
                     day: "numeric",
                   })}
                 </time>
-                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
               </li>
             ))
           }

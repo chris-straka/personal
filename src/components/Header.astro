@@ -14,16 +14,15 @@ const { posts, className } = Astro.props;
 
 <header class={className}>
   <h1>
-    Hi, I&apos;m Chris Straka
+    Hi, I&apos;m Chris 
     <GithubSvg />
   </h1>
   <nav>
     <a href="/">Home</a>
     <a href="/blog">Blog</a>
     <a href={RESUME_LINK} target="_blank">Resume</a>
-    <a href={GITHUB_LINK} target="_blank">GitHub</a>
   </nav>
-  <h2>Recent Posts</h2>
+  <h2>Recent Posts 📬</h2>
   <ul>
     <Post post={posts[0]} />
     <Post post={posts[1]} />

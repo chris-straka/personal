@@ -1,7 +1,7 @@
 html,
 body {
 	font-family: Verdana, sans-serif;
-	color: hsl(33deg 10% 81%);
+	color: hsl(0, 0%, 90%);
 	background-color: hsl(197deg 6% 13%);
 	height: 100%;
 	word-wrap: break-word;
@@ -35,7 +35,7 @@ img {
 	html,
 	body {
 		color: #444;
-		background-color: f0f2f5;
+		background-color: #f0f2f5;
 	}
 
 	h1,
