@@ -1,10 +1,10 @@
 ---
-title: 'opinion - vanilla web components should be avoided'
+title: 'Opinion - vanilla web components should be avoided'
 description: 'This post talks about my opinion on vanilla web components and why I think they should be avoided in favour of web component libraries.'
 pubDate: 'Jul 02 2022'
 ---
 
-TLDR: In my opinion, web component libraries such as [lit](https://lit.dev/) or [stenciljs](https://stenciljs.com/) should be used almost exclusively over vanilla web components because JSX (or any other template engine) has significantly better DX over `shadowRoot|template.innerHtml = `
+TLDR: In my opinion, web component libraries such as [stenciljs](https://stenciljs.com/) should be used almost exclusively over vanilla web components because JSX (or any other template engine) has significantly better DX over `shadowRoot|template.innerHtml = `
 
 I don't consider myself to be an opinionated developer and I'm often skeptical of people who say one frontend/backend framework is better than another. There's no issue with having a _preference_ for a certain framework, and there's also cases where performance considerations must prevail (i.e. C++/rust/golang over python). But in general, I find that once you get into the groove of writing idiomatic code in any popular framework, they're all pretty good and tend to follow strong software design principles. I enjoy the dependency injection in Angular, and I also like the flux pattern used in React, etc. Where I differ, is when it comes to using vanilla web components. And in particular, the use of `shadowRoot.innerHtml = ` or `template.innerHtml = `. 
 
