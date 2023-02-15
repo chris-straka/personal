@@ -1,7 +1,7 @@
 ---
-title: 'Why I don't like writing my own vanilla web components'
-description: 'This post talks about my opinion on creating vanilla web components in JS and why I'm more fond of other solutions.'
-pubDate: 'Jul 02 2022'
+title: "Why I don't like writing my own web components in vanilla javascript"
+description: "In this post I write about my experience building vanilla web components with JS"
+pubDate: "Feb 14 2023"
 ---
 
 PS: If you like creating your own vanilla web components, please don't let this post stop you from doing just that. I tend to write stuff that I'm later embarrassed about as well, so please don't take this post too seriously.

@@ -1,7 +1,7 @@
 ---
-title: 'Ethereum development notes'
-description: 'This blog post is a couple of things I learned a long the way when developing my own ethereum applications' 
-pubDate: 'Jul 02 2022'
+title: "Ethereum development notes"
+description: "This blog post is a couple of things I learned a long the way when developing my own ethereum applications" 
+pubDate: "Jul 02 2022"
 ---
 
 Implementing [recurring payments](https://ethereum.stackexchange.com/questions/49596) on Ethereum is not as easy as I thought it'd be. It's hard to create recurring payments because in Ethereum, only EOAs "Externally Owned Accounts" (humans) can create transactions. A CA "Contract Account" like Pethreon, can't create a transaction. In ethereum, a "transaction" is any action from an EOA that changes the state of the ethereum network. Sending ethereum from one person to another is the simplest form of transaction. The more complicated form of transaction is when an EOA sends a transaction to a CA. 
