@@ -4,34 +4,29 @@ description: "This blog post is about how I built a simple yet convincing termin
 pubDate: "Feb 08 2023"
 ---
 
-I used a cool trick to make the terminal for this website and I think it's worth sharing.
-If you want to find out more about how I made it in its entirety, you can check
-out the [source code for my terminal on Github](https://github.com/chris56974/personal-website).
+I used a cool trick to make the terminal for this website and I think it's worth sharing. If you want to find out more about how I made it in its entirety, you can checkout the [source code for my terminal emulator on Github](https://github.com/chris56974/personal-website).
 
-There's only two HTML elements that are meant to take in text from the user,
-`<input />` and `<textarea/>`. I needed an element that would allow me to enter
-in text that the user couldn't delete (the terminal prompt)
-**and** I needed the text to wrap onto the next line like it does in a terminal.
+There's only two built-in HTML elements that are meant to take in text from the user (that I know of), `<input />` and `<textarea/>`. To make a terminal emulator, I needed a way to display some text that the user couldn't delete (the prompt) **and** I needed text from the user to wrap onto the next line like it does normally in a terminal.
 
 <input
   type="text"
   readonly
-  value="It's easy to add text that the user can't delete inside an input element like this one, but it doesn't wrap onto the next line"
+  value="inputs like this one can't wrap their text content onto the next line (someone can correct me if I'm mistaken)"
   style="width: 100%;"
 />
 
 <br />
 <br />
 
-<textarea>The text inside a textarea will wrap onto the next line, but the user is free to delete anything inside of it</textarea>
+<textarea style="width: 100%; height: 100px;">The text inside a textarea can wrap easily onto the next line, but it's difficult to create a terminal prompt inside the textarea that a user can't delete. I want the user's text to wrap underneath the terminal prompt like it does in a real terminal. Maybe this is doable with JS or something else, but ultimately I decided on this next trick that I learned about</textarea>
 
 <br />
 
 To get around both these limitations, I found a [global HTML attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes)
-called [contenteditable](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable).
-You have to be weary of accessibility when you use it, and I think it's mostly used for creating your own
-[WYSIWYG editor](https://en.wikipedia.org/wiki/WYSIWYG). But it works wonders for creating your own terminal.
+called [contenteditable](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable). You have to be careful of accessibility when you use it, and I think it's mostly used for creating your own [WYSIWYG editor](https://en.wikipedia.org/wiki/WYSIWYG). But it works wonders for creating your own terminal.
 
 ```html
 <div>[visitor@mywebsite ~] <span contenteditable></span></div>
 ```
+
+<div>[visitor@mywebsite ~] <span contenteditable></span></div>
