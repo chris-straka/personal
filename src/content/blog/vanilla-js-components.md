@@ -1,5 +1,5 @@
 ---
-title: "Components in Vanilla JS"
+title: "Vanilla JS Components"
 description: "In this post I write about my experience building vanilla web components in JS"
 pubDate: "Feb 14 2023"
 ---
